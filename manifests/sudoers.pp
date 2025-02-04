@@ -102,8 +102,6 @@ define sudo::sudoers (
   if $users != undef and $group != undef {
     fail 'You cannot define both a list of users and a group. Choose one.'
   }
-  
-  validate_string($group)
 
   if $ensure == 'present' {
     file { $sudoers_user_file:
